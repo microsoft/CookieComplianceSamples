@@ -12,9 +12,7 @@ public class ConsentClient {
 
 	public static Map<ConsentCategory, Boolean> GetUserConsent(String cookieString) {
 		
-		Map<ConsentCategory, Boolean> userPermissions = CookieParserUtility.ParseCookiesString(cookieString);
-
-		return null;
+		return CookieParserUtility.ParseCookiesString(cookieString);
 	}
 
 }
