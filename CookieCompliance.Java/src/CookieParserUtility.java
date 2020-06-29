@@ -22,7 +22,7 @@ public class CookieParserUtility {
 		Map<String, String> rawKeyValuePairs = GetRawKeyValuePairs(cookieString);
 
 		rawKeyValuePairs.forEach((rawConsentCategory, rawConsentCategoryStatus) -> {
-			if (!rawConsentCategory.equalsIgnoreCase("ConsentId")) {
+			if (!rawConsentCategory.equalsIgnoreCase("cid")) {
 				ConsentCategory consentCategory = ConsentCategory.getConsentCategory(rawConsentCategory);
 				boolean consentStatus = GetConsentStatus(rawConsentCategoryStatus);
 				categoryConsents.put(consentCategory, consentStatus);
@@ -44,7 +44,7 @@ public class CookieParserUtility {
 	private static Map<String, String> GetRawKeyValuePairs(String cookieString) {
 		Map<String, String> keyValuePairs = new HashMap<String, String>();
 
-		String[] rawCookieCategory = cookieString.split(";");
+		String[] rawCookieCategory = cookieString.split(",");
 		for (String rawConsentValue : rawCookieCategory) {
 			String trimmedValue = rawConsentValue.trim();
 			if (trimmedValue == null || trimmedValue.isEmpty()) {
@@ -64,7 +64,7 @@ public class CookieParserUtility {
 	}
 
 	private static boolean IsConsentNotRequired(String cookieString) {
-		List<String> keyValuePair = Arrays.asList(cookieString.split(";"));
+		List<String> keyValuePair = Arrays.asList(cookieString.split(","));
 
 		return keyValuePair.stream().anyMatch(NRString::equalsIgnoreCase);
 	}
