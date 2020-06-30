@@ -6,7 +6,7 @@ import java.util.Map;
 public enum ConsentCategory {
 
 	REQUIRED("c0"), 
-	THIRDPARTYANALYTICS("c1"), 
+	ANALYTICS("c1"), 
 	SOCIALMEDIA("c2"), 
 	ADVERTISING("c3"), 
 	PERSONALIZATION("c4");
