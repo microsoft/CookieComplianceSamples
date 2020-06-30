@@ -8,7 +8,7 @@ public class Main {
 		// c0
 		System.out.println(ConsentClient.GetConsentForCategory(cookieString, ConsentCategory.REQUIRED));
 		// c1
-		System.out.println(ConsentClient.GetConsentForCategory(cookieString, ConsentCategory.THIRDPARTYANALYTICS));
+		System.out.println(ConsentClient.GetConsentForCategory(cookieString, ConsentCategory.ANALYTICS));
 		// c2
 		System.out.println(ConsentClient.GetConsentForCategory(cookieString, ConsentCategory.SOCIALMEDIA));
 		// c3
