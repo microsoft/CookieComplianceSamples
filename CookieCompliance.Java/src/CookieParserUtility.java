@@ -29,6 +29,7 @@ public class CookieParserUtility {
 			}
 		});
 
+		categoryConsents.put(ConsentCategory.REQUIRED, true);
 		return categoryConsents;
 	}
 
@@ -71,11 +72,14 @@ public class CookieParserUtility {
 
 	private static Map<ConsentCategory, Boolean> GetDefaultConsents(Boolean defaultValue) {
 		defaultValue = defaultValue == null ? false : true;
+		
 		Map<ConsentCategory, Boolean> defaultConsents = new HashMap<>();
 		for (ConsentCategory consentCategory : ConsentCategory.values()) {
 			defaultConsents.put(consentCategory, defaultValue);
 		}
-
+		
+		defaultConsents.put(ConsentCategory.REQUIRED, true);
+		
 		return defaultConsents;
 	}
 }

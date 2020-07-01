@@ -31,6 +31,9 @@ public class Main {
 		
 		System.out.println(ConsentClient.GetUserConsent("c0=1,NR"));
 		
+		// c0 - true c4- false
+		System.out.println(ConsentClient.GetUserConsent("c1=1,c2=2,c3=0,cid=random-consent-id"));
+		
 	}
 
 }
