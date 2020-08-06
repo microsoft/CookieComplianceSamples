@@ -8,8 +8,7 @@ public enum ConsentCategory {
 	REQUIRED("c0"), 
 	ANALYTICS("c1"), 
 	SOCIALMEDIA("c2"), 
-	ADVERTISING("c3"), 
-	PERSONALIZATION("c4");
+	ADVERTISING("c3");
 
 	private String categoryString;
 	private static final Map<String, ConsentCategory> reverseLookUp = new HashMap<>();
